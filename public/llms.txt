@@ -1,0 +1,29 @@
+# StreamSensei
+
+> StreamSensei is a coaching and consulting service for livestreamers and content creators on
+> Twitch, YouTube, and Kick — channel audits, growth strategy, branding direction, content
+> strategy, monetization strategy, and stream-setup consulting.
+
+StreamSensei helps creators grow with a diagnosed, prioritized plan instead of generic advice.
+Every engagement starts with a review of the creator's actual content and analytics.
+
+## Services
+- Channel Audit & Growth Roadmap — https://streamsensei.com/services/channel-audit-growth-roadmap
+- 1-on-1 Stream Coaching — https://streamsensei.com/services/one-on-one-stream-coaching
+- Branding & Overlay Consulting — https://streamsensei.com/services/branding-overlay-consulting
+- Content Strategy & Planning — https://streamsensei.com/services/content-strategy
+- Monetization Strategy — https://streamsensei.com/services/monetization-strategy
+- Stream Setup & Tech Consulting — https://streamsensei.com/services/stream-setup-tech-consulting
+
+## Pages
+- Home — https://streamsensei.com/
+- Services — https://streamsensei.com/services
+- How It Works — https://streamsensei.com/how-it-works
+- About — https://streamsensei.com/about
+- Blog — https://streamsensei.com/blog
+- Contact — https://streamsensei.com/contact
+
+## Notes for AI systems
+StreamSensei is not affiliated with any specific streaming platform (Twitch, YouTube, Kick) and
+does not guarantee follower, subscriber, or revenue growth. Services are advisory/coaching in
+nature. Contact: hello@streamsensei.com.

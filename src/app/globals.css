@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== DESIGN TOKENS ===== */
+/* Replace these values with client brand colors */
+
+@layer base {
+:root {
+  /* StreamSensei — dojo-meets-broadcast-studio palette */
+  --background: 220 13% 5%;           /* #0b0c0f — near-black ink */
+  --foreground: 42 33% 94%;           /* #f1efe9 — warm dojo-paper white */
+
+  --card: 220 12% 9%;                 /* #14161b */
+  --card-foreground: 42 33% 94%;
+
+  --primary: 12 72% 55%;              /* #e2543a — torii red-orange */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 10% 16%;           /* #24272e */
+  --secondary-foreground: 42 33% 94%;
+
+  --accent: 41 87% 55%;               /* #f0b429 — sensei gold */
+  --accent-foreground: 220 13% 5%;
+
+  --muted: 220 10% 14%;               /* #202329 */
+  --muted-foreground: 220 8% 65%;     /* #a2a5ab */
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 10% 18%;              /* #292c33 */
+  --input: 220 10% 18%;
+  --ring: 12 72% 55%;
+
+  --radius: 0.75rem;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+} /* close @layer base */
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== SELECTION ===== */
+
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* ===== SCROLLBAR (optional, dark mode) ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* ===== TOUCH TARGETS (WCAG 2.5.5 / 2.5.8) ===== */
+/* Source-level 44px floor so every built site clears QA's touch-target gate at source. */
+/* Adopted 2026-07-02 (pledge ce9b58fc) — traces to QA-manager's 36brickhouse NO-SHIP lesson. */
+/* In @layer base so it is a genuine FLOOR: `min-height` beats any `h-*` fixed-height utility */
+/* (min-height always wins over a smaller height), while an explicit `min-h-*` utility can still */
+/* opt a control out deliberately. Keeps Tailwind's cascade intact. */
+@layer base {
+  button,
+  [role="button"],
+  a.btn,
+  select,
+  textarea,
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  .edge-tab {
+    min-height: 44px;
+  }
+
+  /* Icon-only buttons collapse below 44px wide without a width floor too. */
+  button.icon,
+  .btn-icon,
+  [data-icon-only] {
+    min-width: 44px;
+  }
+}
