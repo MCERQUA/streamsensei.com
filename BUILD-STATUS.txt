@@ -1,0 +1,70 @@
+STREAMSENSEI.COM — BUILD STATUS
+Built: 2026-08-21 by worker-c (josh-desk-4@mesh), time-boxed build
+Repo: local standalone git repo, branch main, 1 commit, NOT pushed (per task instructions — build+commit only)
+
+CLASSIFICATION
+Domain angle: livestream & content-creator growth coaching (Twitch/YouTube/Kick) —
+NOT insurance, NOT a construction trade, NOT CCA-affiliated. Real market validated
+via web research (StreamScheme and comparable coaching services exist in this niche).
+See ai/research/angle-and-collision-check.md for the full research trail, including a
+disclosed minor naming overlap with an existing small "Stream Sensei" YouTube channel
+(no trademark, low profile — not a legal blocker, but flagged for awareness).
+
+STACK
+Next.js 15.3.9, React 19.2.0, TypeScript, Tailwind CSS, motion, lenis, lucide-react.
+Static export (output: "export"), publish dir "out/". pnpm-only lockfile.
+
+DESIGN
+Stitch-generated homepage mockup (project 11528523295092084309, design system
+assets/12486432164858448476) — dojo-meets-broadcast-studio direction. Palette + type
+ported into globals.css/fonts.ts. See ai/design/design-system.md.
+Palette: bg #0b0c0f, primary #e2543a (torii red-orange), accent #f0b429 (sensei gold),
+foreground #f1efe9. Headings: Sora. Body: Inter.
+
+PAGES BUILT (13 routes + 6 dynamic service pages = 19 static pages + 404)
+- Home (8 sections: hero, trust bar, services grid, how it works, why us, testimonials,
+  pricing, FAQ, final CTA)
+- /services (index) + 6 service detail pages (channel-audit-growth-roadmap,
+  one-on-one-stream-coaching, branding-overlay-consulting, content-strategy,
+  monetization-strategy, stream-setup-tech-consulting)
+- /how-it-works, /about, /contact, /privacy, /terms
+- /blog (index) + 3 long-form posts (800-1000 words each, keyword-targeted)
+
+FORMS
+Netlify Forms: "quote" (contact page, platform + channel-link fields) and "contact"
+(registered via public/__forms.html decoy). AEO traffic_source + landing_url hidden
+fields wired on both. Honeypot field present. No API routes (static-export safe).
+
+IMAGES
+9 images generated (Gemini 2.5 Flash Image — HF FLUX.1-schnell was deprecated on
+hf-inference, used the working fallback), resized to 1920px max + JPEG q80 via sharp.
+Total public/images + public/og = 920KB (well under budget).
+
+SEO
+Per-page metadata, JSON-LD (ProfessionalService on layout, Service schema per service
+page), sitemap.xml, robots.txt, llms.txt, canonical OG/Twitter images.
+
+CONTACT / IDENTITY
+Not CCA-branded — no CCA phone/address used (out of scope, not CCA-affiliated).
+Contact: hello@streamsensei.com (domain-based email, not yet provisioned to a live
+mailbox) + Netlify lead form. No physical address listed — business is inherently
+remote/online coaching; a fabricated street address would be dishonest.
+Pricing shown is illustrative ("from $X") with an explicit disclaimer that real quotes
+are confirmed after the free audit call — avoids asserting false-precision figures for
+a business with no real transaction history yet.
+
+BUILD / QA
+- `pnpm run build` — GREEN, static export to out/ (23 routes)
+- Placeholder sweep — clean in rendered output (grep hits only in unused template
+  DEFAULTS fallback constants, never reached since every page passes real props;
+  removed the one genuinely-unused old ContactForm.tsx template file)
+- pre-deploy-content-check.sh — PASS (streamsensei.com content=26 own-keyword hits,
+  git remote consistent after standalone git init)
+- No dev server left running
+- .gitignore covers node_modules/.next/out/package-lock.json — verified none staged
+
+NOT DONE / OUT OF SCOPE FOR THIS TIME-BOXED PASS
+- No push (per task instructions — build+commit only)
+- No GitHub repo created yet (MCERQUA/streamsensei.com) — needs host/deploy-key step
+- Domain-based email (hello@streamsensei.com) not provisioned to a live mailbox
+- Netlify site not yet created/connected — netlify.toml is ready for when it is
