@@ -34,7 +34,7 @@ const DEFAULTS = {
   secondaryCTA: "Learn More",
   secondaryHref: "/about",
   image: "/images/hero.webp",
-  imageAlt: "Description of hero image",
+  imageAlt: "A dark dojo-style streaming studio with a glowing red torii gate and a monitor showing red and teal light waves",
 };
 
 export function HeroSplit(props: HeroSplitProps) {
