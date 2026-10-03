@@ -3,11 +3,10 @@ import { TrustBar } from "@/components/sections/TrustBar";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhyUs } from "@/components/sections/WhyUs";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTA } from "@/components/sections/CTA";
-import { TESTIMONIALS, FAQS } from "@/lib/site-data";
+import { FAQS } from "@/lib/site-data";
 
 export default function HomePage() {
   return (
@@ -29,12 +28,6 @@ export default function HomePage() {
       <ServicesGrid />
       <HowItWorks />
       <WhyUs />
-      <Testimonials
-        label="Creator Results"
-        title="What Creators Say "
-        titleAccent="After Coaching"
-        testimonials={TESTIMONIALS.map((t) => ({ name: t.name, role: t.handle, text: t.quote }))}
-      />
       <PricingTiers />
       <FAQ
         eyebrow="Questions"
